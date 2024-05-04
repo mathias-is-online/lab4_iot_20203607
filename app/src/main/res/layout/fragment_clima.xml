@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClimaFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar clima"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="316dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="84dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <EditText
+            android:id="@+id/latitud"
+            android:layout_width="17dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="44dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Latitud"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/longitud"
+            android:layout_width="0dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="44dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Latitud"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="Buscar" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_navbar"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="180dp"
+            android:layout_height="70sp"
+            android:padding="18dp"
+
+            android:text="Geolocalización" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="180sp"
+            android:layout_height="70sp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="230dp"
+            android:padding="18dp"
+            android:text="Clima" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
