@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.lab4_20203607.databinding.FragmentClimaBinding;
 import com.example.lab4_20203607.entity.Clima;
@@ -67,6 +68,7 @@ public class ClimaFragment extends Fragment {
 
 
 
+    private TextView textViewDireccionViento;
 
     FragmentClimaBinding binding;
     private NavController navController;
@@ -119,6 +121,8 @@ public class ClimaFragment extends Fragment {
 
         binding = FragmentClimaBinding.inflate(inflater, container, false);
 
+        textViewDireccionViento = binding.direccionviento;
+
         binding.button1.setOnClickListener(view -> {
 
             NavController navController = NavHostFragment.findNavController(ClimaFragment.this);
@@ -134,6 +138,14 @@ public class ClimaFragment extends Fragment {
 
         return binding.getRoot();
 
+    }
+
+
+    public void actualizarDireccionViento(String direccionViento) {
+        // Actualizar el TextView con la dirección del viento recibida
+        if (textViewDireccionViento != null) {
+            textViewDireccionViento.setText("Dirección del viento: " + direccionViento);
+        }
     }
 
 

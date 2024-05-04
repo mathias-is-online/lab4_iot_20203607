@@ -11,6 +11,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
@@ -92,6 +93,16 @@
             android:layout_weight="1"
             android:text="Buscar" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/direccionviento"
+        android:layout_width="141dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="160dp"
+        android:text="Direccion"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
