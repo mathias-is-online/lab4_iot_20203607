@@ -10,6 +10,35 @@
     <!-- TODO: Update blank fragment layout -->
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/shape_navbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="180dp"
+            android:layout_height="70sp"
+            android:padding="18dp"
+
+            android:text="Geolocalización" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="180sp"
+            android:layout_height="70sp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="230dp"
+            android:padding="18dp"
+            android:text="Clima" />
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -63,33 +92,6 @@
             android:layout_weight="1"
             android:text="Buscar" />
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_navbar"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="0dp">
-
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="180dp"
-            android:layout_height="70sp"
-            android:padding="18dp"
-
-            android:text="Geolocalización" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="180sp"
-            android:layout_height="70sp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="230dp"
-            android:padding="18dp"
-            android:text="Clima" />
-
-    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
