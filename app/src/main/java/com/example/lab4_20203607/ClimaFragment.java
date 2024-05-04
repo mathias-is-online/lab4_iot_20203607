@@ -1,7 +1,9 @@
 package com.example.lab4_20203607;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -29,6 +31,42 @@ import java.util.List;
 public class ClimaFragment extends Fragment {
 
     private List<Clima> listaClima;
+    AppActivity mActivity;
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof AppActivity) {
+            mActivity = (AppActivity) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement AppActivity");
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mActivity.activarMagnetometro();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mActivity.desactivarMagnetometro();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     FragmentClimaBinding binding;
     private NavController navController;

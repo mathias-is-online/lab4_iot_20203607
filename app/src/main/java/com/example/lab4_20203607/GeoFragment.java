@@ -1,7 +1,9 @@
 package com.example.lab4_20203607;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -20,7 +22,31 @@ import com.example.lab4_20203607.databinding.FragmentGeoBinding;
  */
 public class GeoFragment extends Fragment {
 
+    AppActivity mActivity;
 
+
+    //esto es para q se implemente el acelerometro SOLO en GEOFRAGMENT
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof AppActivity) {
+            mActivity = (AppActivity) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement AppActivity");
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mActivity.activarAcelerometro();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mActivity.desactivarAcelerometro();
+    }
 
     FragmentGeoBinding binding;
     private NavController navController;

@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -72,20 +73,31 @@ public class AppActivity extends AppCompatActivity{
 
         //cargarListaClima();
 
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        activarAcelerometro();
+        activarMagnetometro();
 
-        Sensor mAcc = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mSensorManager.registerListener(listener,mAcc,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        desactivarAcelerometro();
+        desactivarMagnetometro();
 
+    }
+
+    public void activarAcelerometro() {
+        Sensor mAcc = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mSensorManager.registerListener(listener, mAcc, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    public void desactivarAcelerometro() {
         mSensorManager.unregisterListener(listener);
     }
 
@@ -98,6 +110,31 @@ public class AppActivity extends AppCompatActivity{
             AlertDialog dialog = builder.create();
             dialog.show();
         });
+    }
+
+
+
+    public void actualizarDireccionViento(String direccionViento) {
+        // Aquí puedes actualizar la interfaz de usuario con la dirección del viento recibida
+        // Por ejemplo, podrías mostrar la dirección del viento en un TextView en tu layout
+
+        /*TextView textViewDireccionViento = findViewById(R.id.textViewDireccionViento); // Suponiendo que tienes un TextView con el id textViewDireccionViento
+        if (textViewDireccionViento != null) {
+            textViewDireccionViento.setText("Dirección del viento: " + direccionViento);
+        }
+
+         */
+    }
+
+
+
+
+    public void activarMagnetometro() {
+        Sensor mMagnet = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        mSensorManager.registerListener(listener, mMagnet, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+    public void desactivarMagnetometro() {
+        mSensorManager.unregisterListener(listener);
     }
 
 
