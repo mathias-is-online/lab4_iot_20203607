@@ -129,11 +129,7 @@ public class ClimaFragment extends Fragment {
             navController.navigate(R.id.action_climaFragment1_to_geoFragment1);
         });
 
-        binding.button2.setOnClickListener(view -> {
 
-            NavController navController = NavHostFragment.findNavController(ClimaFragment.this);
-            navController.navigate(R.id.action_geoFragment1_to_climaFragment1);
-        });
 
 
         return binding.getRoot();

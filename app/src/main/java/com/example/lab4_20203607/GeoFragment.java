@@ -106,12 +106,7 @@ public class GeoFragment extends Fragment {
 
         binding = FragmentGeoBinding.inflate(inflater, container, false);
 
-        binding.button1.setOnClickListener(view -> {
 
-            NavController navController = NavHostFragment.findNavController(GeoFragment.this);
-            navController.navigate(R.id.action_climaFragment1_to_geoFragment1);
-
-        });
 
         binding.button2.setOnClickListener(view -> {
 
