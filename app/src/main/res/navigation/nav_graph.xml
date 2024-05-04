@@ -22,6 +22,8 @@
         tools:layout="@layout/fragment_clima" >
         <action
             android:id="@+id/action_climaFragment1_to_geoFragment1"
-            app:destination="@id/geoFragment" />
+            app:destination="@id/geoFragment"
+            app:popUpTo="@id/geoFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>
